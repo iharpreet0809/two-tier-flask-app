@@ -37,6 +37,7 @@ services:
       - mysql
     networks:
       - twotier
+    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:5000/health || exit 1"]
       interval: 10s
