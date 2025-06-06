@@ -45,7 +45,7 @@ pipeline {
                 //EC2 only pulls the updated image, no new local builds => less disk space usage
                 //You always run the exact tested image from your Docker Hub
                 //You clear old images and keep EC2 clean
-                sh 'docker rmi $(docker images -aq) --force'
+                sh 'docker rmi $(docker images -aq)'
                 
             }
         }
