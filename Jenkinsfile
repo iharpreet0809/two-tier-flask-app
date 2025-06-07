@@ -50,4 +50,21 @@ pipeline {
             }
         }
     }
+
+post{
+    success{
+        emailext(
+        subject: "Build Successfully Done for DemoCICD App",
+        body: "good news your build was successfull!",
+        to:"harpreetarora066@gmail.com, talkwithharpreet@gmail.com"
+        )
+    }
+    failure{
+        emailext(
+        subject: "Build Failure for DemoCICD App",
+        body: "Bad news your build was NOt successfull!",
+        to:"harpreetarora066@gmail.com, talkwithharpreet@gmail.com"
+        )
+    }
+}    
 }
