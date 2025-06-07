@@ -7,6 +7,9 @@ pipeline {
                 git url: 'https://github.com/iharpreet0809/two-tier-flask-app.git', branch: 'master'
             }
         }
+        stage('Trivy file system Check'){
+            sh "trivy fs . -o results.json"
+        }
 
         stage('Build') {
             steps {
